@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { CharacterModel } from "../../models/Character";
+import { CharacterModel } from "../../models/CharacterModel";
 import * as ac from "../../reducers/characters/action.creator";
 
 const initialState: Array<CharacterModel> = [];

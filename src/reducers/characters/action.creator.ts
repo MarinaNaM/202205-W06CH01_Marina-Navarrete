@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { CharacterModel } from "../../models/Character";
+import { CharacterModel } from "../../models/CharacterModel";
 import { actionTypes } from "./action.types";
 
 export interface iAction {
