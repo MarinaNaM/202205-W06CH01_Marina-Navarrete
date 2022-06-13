@@ -9,7 +9,7 @@ export interface iCharacter {
 export class CharacterModel implements iCharacter {
     id: number;
     serie = "GoT";
-    private estadoVivo: boolean;
+    public isAlive: boolean;
     static generateId(): number {
         return Math.ceil(Math.random() * 100_000);
     }
@@ -19,7 +19,7 @@ export class CharacterModel implements iCharacter {
         public age: number,
         public category: "king" | "fighter" | "adviser" | "squire"
     ) {
-        this.estadoVivo = true;
+        this.isAlive = true;
         this.id = CharacterModel.generateId();
     }
 }
