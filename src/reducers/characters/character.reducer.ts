@@ -5,7 +5,9 @@ import * as ac from "../../reducers/characters/action.creator";
 const initialState: Array<CharacterModel> = [];
 export const characterReducer = createReducer(initialState, (builder) => {
     return builder
-        .addCase(ac.loadTasksAction, (state, action) => [...action.payload])
+        .addCase(ac.loadCharactersAction, (state, action) => [
+            ...action.payload,
+        ])
         .addCase(ac.addCharacterAction, (state, action) => [
             ...state,
             action.payload,

@@ -2,12 +2,7 @@ import { createAction } from "@reduxjs/toolkit";
 import { CharacterModel } from "../../models/CharacterModel";
 import { actionTypes } from "./action.types";
 
-export interface iAction {
-    type: actionTypes;
-    payload?: any;
-}
-
-export const loadTasksAction = createAction<Array<CharacterModel>>(
+export const loadCharactersAction = createAction<Array<CharacterModel>>(
     actionTypes["character@load"].toLocaleString()
 );
 
