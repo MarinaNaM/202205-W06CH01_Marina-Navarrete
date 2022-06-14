@@ -3,11 +3,7 @@
 // retorna un NUEVO estado (NO HAY MUTACION)
 
 import { createReducer } from "@reduxjs/toolkit";
-import {
-    CharacterModel,
-    anyCharacter,
-    iCharacter,
-} from "../../models/CharacterModel";
+import { CharacterModel, iCharacter } from "../../models/CharacterModel";
 import * as ac from "./action.creators";
 
 const initialState: iCharacter = { ...new CharacterModel("", "", 0, "king") };

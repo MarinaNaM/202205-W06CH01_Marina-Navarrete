@@ -41,3 +41,5 @@ export function GotPage() {
         </main>
     );
 }
+
+export default GotPage;

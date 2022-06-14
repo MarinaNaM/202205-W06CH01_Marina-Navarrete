@@ -19,6 +19,7 @@ export function Card({ character }: { character: anyCharacter }) {
                 dispatch(ac.unloadSpeakerAction());
             }, 2000);
         } else {
+            console.log("sergio");
             dispatch(dieCharacterAction(character));
         }
     }
