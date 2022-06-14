@@ -20,5 +20,12 @@ export const characterReducer = createReducer(initialState, (builder) => {
         .addCase(ac.deleteCharacterAction, (state, action) =>
             state.filter((item) => item.id !== action.payload)
         )
+        .addCase(ac.dieCharacterAction, (state, action) =>
+            state.map((item) =>
+                item.id === action.payload.id
+                    ? { ...item, lifeState: false }
+                    : item
+            )
+        )
         .addDefaultCase((state) => state);
 });

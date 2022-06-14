@@ -1,18 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CharacterModel } from "../models/CharacterModel";
+import { anyCharacter, CharacterModel } from "../models/CharacterModel";
 import { characterReducer } from "../reducers/characters/character.reducer";
+import { speakerReducer } from "../reducers/speaker/speaker.reducer";
 
 export interface iState {
-    characters: Array<CharacterModel>;
+    characters: Array<anyCharacter>;
+    speaker: anyCharacter;
 }
 
 const preloadedState = {
-    characters: [],
+    characters: [] as Array<anyCharacter>,
+    speaker: { ...new CharacterModel("", "", 0, "king") },
 };
 
 export const store = configureStore({
     reducer: {
         characters: characterReducer,
+        speaker: speakerReducer,
     },
     preloadedState,
 });

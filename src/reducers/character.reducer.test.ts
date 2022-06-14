@@ -12,6 +12,7 @@ const mockCharacters: Array<CharacterModel> = [
         family: "Lannister",
         age: 33,
         category: "king",
+        message: "",
     },
     {
         name: "Pepe",
@@ -21,6 +22,7 @@ const mockCharacters: Array<CharacterModel> = [
         family: "Targaryen",
         age: 11,
         category: "adviser",
+        message: "",
     },
 ];
 

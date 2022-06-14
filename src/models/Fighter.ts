@@ -1,6 +1,6 @@
-import { CharacterModel } from "./CharacterModel";
+import { CharacterModel, iCharacter } from "./CharacterModel";
 
-export class Fighter extends CharacterModel {
+export class Fighter extends CharacterModel implements iCharacter {
     constructor(
         name: string,
         family: string,
@@ -9,5 +9,6 @@ export class Fighter extends CharacterModel {
         public skill: number
     ) {
         super(name, family, age, "fighter");
+        this.message = "Primero pego y luego pregunto";
     }
 }

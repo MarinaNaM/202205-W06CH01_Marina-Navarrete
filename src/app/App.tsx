@@ -1,7 +1,12 @@
+import { Route, Routes } from "react-router-dom";
+import { GotPage } from "../pages/gotPage";
 import "./App.css";
 
-function App() {
-    return <h1>Hola</h1>;
+export function App() {
+    return (
+        <Routes>
+            <Route path="" element={<GotPage />}></Route>
+            {/* <Route path="/form" element={<FormPage />}></Route> */}
+        </Routes>
+    );
 }
-
-export default App;

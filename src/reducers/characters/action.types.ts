@@ -3,4 +3,5 @@ export enum actionTypes {
     "character@delete" = "character@delete",
     "character@update" = "character@update",
     "character@load" = "character@load",
+    "character@die" = "character@die",
 }

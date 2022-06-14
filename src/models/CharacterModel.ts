@@ -1,15 +1,29 @@
+import { Adviser } from "./Adviser";
+import { Fighter } from "./Fighter";
+import { King } from "./King";
+import { Squire } from "./Squire";
+
 export interface iCharacter {
-    serie: string;
+    id: number;
     name: string;
     family: string;
     age: number;
     category: "king" | "fighter" | "adviser" | "squire";
+    message: string;
+    kingdomYears?: number;
+    weapon?: string;
+    skill?: number;
+    submission?: number;
+    owner?: Fighter;
+    boss?: CharacterModel;
 }
 
+export type anyCharacter = CharacterModel | King | Fighter | Adviser | Squire;
 export class CharacterModel {
-    id: number;
     serie = "GoT";
-    public isAlive: boolean;
+    isAlive: boolean;
+    message: string;
+    id: number;
     static generateId(): number {
         return Math.ceil(Math.random() * 100_000);
     }
@@ -21,5 +35,6 @@ export class CharacterModel {
     ) {
         this.isAlive = true;
         this.id = CharacterModel.generateId();
+        this.message = "";
     }
 }
