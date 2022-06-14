@@ -3,17 +3,17 @@ import { CharacterModel } from "../../models/CharacterModel";
 import { actionTypes } from "./action.types";
 
 export const loadCharactersAction = createAction<Array<CharacterModel>>(
-    actionTypes["character@load"].toLocaleString()
+    actionTypes["character@load"]
 );
 
 export const addCharacterAction = createAction<CharacterModel>(
-    actionTypes["character@add"].toLocaleString()
+    actionTypes["character@add"]
 );
 
 export const updateCharacterAction = createAction<CharacterModel>(
-    actionTypes["character@update"].toLocaleString()
+    actionTypes["character@update"]
 );
 
-export const deleteCharacterAction = createAction<CharacterModel>(
-    actionTypes["character@delete"].toLocaleString()
+export const deleteCharacterAction = createAction<CharacterModel["id"]>(
+    actionTypes["character@delete"]
 );

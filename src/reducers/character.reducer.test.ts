@@ -1,5 +1,5 @@
 import { CharacterModel } from "../models/CharacterModel";
-import { render } from "../utils/test-utils";
+// import { render } from "../utils/test-utils";
 import { characterReducer } from "./characters/character.reducer";
 import * as ac from "../reducers/characters/action.creator";
 
@@ -25,27 +25,30 @@ const mockCharacters: Array<CharacterModel> = [
 ];
 
 describe("Given the Character Reducer", () => {
-    describe("when it is called for load", () => {
-        test("then it should return", () => {
+    describe("when calling it with action load", () => {
+        test("Then it should return a new state with the characters in the action payload", () => {
             const state = characterReducer(
                 [],
                 ac.loadCharactersAction(mockCharacters)
             );
-            expect(state).toEqual(mockCharacters);
+            // const state: CharacterModel[] = []
+            // const actionForTest= ac.loadCharactersAction([mockCharacters])
+            // const newState = characterReducer(state, actionForTest)
+            expect(state).toStrictEqual(mockCharacters);
         });
-        describe("when it is called for add", () => {
-            test("then it should return", () => {
+        describe("when calling it with action add", () => {
+            test("Then it should return a new state with the characters in the action payload", () => {
                 const state = characterReducer(
                     [],
                     ac.addCharacterAction(
                         new CharacterModel("Venancio", "García", 20, "fighter")
                     )
                 );
-                expect(state.length).toBe(1);
+                expect(state).toHaveLength(1);
             });
         });
-        describe("when it is called for update", () => {
-            test("then it should return", () => {
+        describe("when calling it with action update", () => {
+            test("Then it should return a new state with the characters in the action payload", () => {
                 const state = characterReducer(
                     mockCharacters,
                     ac.updateCharacterAction({
@@ -56,11 +59,11 @@ describe("Given the Character Reducer", () => {
                 expect(state[0].isAlive).toEqual(true);
             });
         });
-        describe("when it is called for delete", () => {
-            test("then it should return", () => {
+        describe("when calling it with action delete for one character", () => {
+            test("Then it should return a new state with the characters in the action payload", () => {
                 const state = characterReducer(
                     mockCharacters,
-                    ac.deleteCharacterAction(mockCharacters[0])
+                    ac.deleteCharacterAction(mockCharacters[0].id)
                 );
                 expect(state.length).toBe(1);
             });

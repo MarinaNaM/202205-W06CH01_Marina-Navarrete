@@ -6,7 +6,7 @@ export interface iCharacter {
     category: "king" | "fighter" | "adviser" | "squire";
 }
 
-export class CharacterModel implements iCharacter {
+export class CharacterModel {
     id: number;
     serie = "GoT";
     public isAlive: boolean;

@@ -1,6 +1,6 @@
 export enum actionTypes {
-    "character@add" = 0,
-    "character@delete" = 1,
-    "character@update" = 2,
-    "character@load" = 3,
+    "character@add" = "character@add",
+    "character@delete" = "character@delete",
+    "character@update" = "character@update",
+    "character@load" = "character@load",
 }
